@@ -1,0 +1,57 @@
+[default]
+log_level = "DEBUG"
+host = "0.0.0.0"
+port = 8000
+workers = 1
+cors_origins = ["*"]
+
+# =========================
+# Vector & Indexing Config
+# =========================
+APP_VERSION = "1.0.0"
+DATA_LIMIT = 100000
+DELETE_BEFORE_INDEX = false
+BATCH_SIZE = 100
+EMBEDDING_BATCH_SIZE = 20
+EMBEDDING_DIM = 1024
+MAX_WORKERS = 10
+USE_PARALLEL_EMBEDDING = true
+RATE_LIMIT_DELAY = 0.05
+
+# =========================
+# Model & Service Config
+# =========================
+MAX_SESSION_MESSAGES = 5
+SUMMARY_RATIO = 0.4
+
+
+# =========================
+# Search Parameters
+# =========================
+DEFAULT_KNN_K = 10
+DEFAULT_RESULT_SIZE = 2
+BM25_SCORE_THRESHOLD = 3.0
+HYBRID_SCORE_THRESHOLD = 15.0
+
+# =========================
+# Query Boosts
+# =========================
+TITLE_BOOST = 15.5
+MAKE_BOOST = 15.0
+MODEL_BOOST = 10.0
+DESCRIPTION_BOOST = 10.0
+
+# =========================
+# Fallback Strategy
+# =========================
+ENABLE_LOCATION_FALLBACK = true
+
+[gemini]
+    embedding_size = 256
+
+[dev]
+log_level = "DEBUG"
+
+[prd]
+log_level = "INFO"
+workers = 4
